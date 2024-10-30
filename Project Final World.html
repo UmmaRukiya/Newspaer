@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mainichi</title>
+    <link rel="stylesheet" href="assets/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .caption {
+            margin-left: 31px;
+            color: rgb(73, 73, 72);
+            font-size: 9pt;
+        }
+        .contact{
+            margin-top: 10px;
+            font-size: 10pt;
+            color: #366EBF;
+        }
+        .main-box h2{
+            font-weight: 400;
+        }
+        .latest-articles h2{
+            font-weight: 400;
+        }
+        .latest-articles li{
+            border-bottom: 1px solid #dbdbdb;
+        }
+        .sub-box h2{
+            font-weight: 400;
+        }
+        .sub-box img{
+            width: 100px;
+            height: 60px;
+        }
+        .main-box img{
+            width: 100px;
+            height: 75px;
+        }
+        .main-box .date{
+            font-weight: normal;
+            color: #737373;
+            font-size: 10pt;
+        }
+        .sub-box .date{
+            font-weight: normal;
+            color: #737373;
+            font-size: 10pt;
+        }
+        .date-box {
+            font-size: 10pt;
+            color: black;
+        }
+        .latest-articles .date{
+            font-weight: normal;
+            color: #737373;
+            font-size: 10pt;
+        }
+        .latest-articles img{
+            width: 100px;
+            height: 60px;
+        }
+        .txt-right img{
+            width: 70px;
+            height: 30px;
+            margin-top: 13px;
+        }
+        .txt-right .providing{
+            display: block;
+        }
+        .banner {
+            background-image: url(image/bnr_special_bg.jpg);
+            width: 100%;
+            height: 100px;
+            margin-top: 40px;
+            display: block;
+        }
+        .banner img{
+          position: absolute;
+          right: 200px;
+          width: 150px;
+          height: 80px;
+        }
+        .banner2 a{
+            text-decoration: none;
+        }
+        .banner2 .widget-covid19{
+            background-image: url(image/bg_widget_v3.jpg);
+            width: 100%;
+            height: 190px;
+            margin-top: 160px;
+            padding: 10px;
+            text-align: center;
+        }
+        .widget-covid19-title{
+              color: #366EBF;
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 300;
+            text-align: center;
+            margin: 0;
+        }
+        .widget-covid19-title-cap{
+            font-size: 14px;
+            padding: 0 5px;
+            font-weight: 100;
+        }
+        .widget-covid19-title-2{
+            font-size: 20px;
+            font-weight: 300;
+            display: block;
+            color: #366EBF;
+            line-height: 1.1;
+            text-align: center;
+        }
+        .widget-covid19-date{
+            font-size: 11px;
+            font-weight: normal;
+            color: #00327A;
+        }
+        .widget-covid19-subtitle{
+            font-size: 11px;
+            display: inline-block;
+            background-color: #366EBF;
+            color: #FFFFFF;
+            font-weight: 500;
+            text-align: center;
+            padding: 2px 4px;
+        }
+        .widget-covid19-row{
+            clear: both;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        .widget-covid19-box-label
+        {   
+            width:100%;
+            height: 30px;
+            font-size: 11px;
+            font-weight: 500;
+            color: #00327A;
+            display: inline-block;
+            line-height: 1;
+            padding: 0;
+            text-align: center;
+        }
+        .widget-covid19-box-label2
+        {   
+            width: 100%;
+            height: 30px;
+            font-size: 11px;
+            font-weight: 500;
+            color: #00327A;
+            line-height: 1;
+            padding: 0;
+            margin-top: 0;
+            text-align: center;
+        }
+        .widget-covid19-box-number {
+            font-size: 26px;
+            font-family: Roboto, sans-serif;
+            color: #366EBF;
+            padding: 0;
+            display: block;
+            font-weight: 500;
+            line-height: 1;
+            }
+        .widget-button {
+            display: block;
+            padding: 3px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #366EBF;
+            text-align: center;
+            background-color: #FFFFFF;
+            margin-top: 2px;
+            font-family: Roboto, sans-serif;
+        }
+        .widget-covid19-button-arrow {
+            display: inline-block;
+            width: 7px;
+            height: 11px;
+            background: transparent url(image/arrow_blue.svg) center 100%;
+            background-size: 5px;
+            vertical-align: top;
+            margin: 4px 0 0 10px;
+        }
+        .news-box a{
+            text-decoration: none;
+            color: #737373;
+        }
+        .news-box .photo-box img{
+            width: 75px;
+        }
+        .news-box .list-typeA li a {
+           
+            padding: 0 0 12px;
+            font-weight: 500;
+            border: none;
+            font-size: 13px;
+            color: black;
+        }
+        .news-box .list-typeA li{
+            background-image: url(image/icon-listmark.svg);
+            background-repeat: no-repeat;
+            padding-left: 20px;
+        }
+        .visual-box img{
+            height: 200px;
+        }
+        .visual-box a{
+            color: white;
+        }
+        .visual-box h2{
+            background: url(image/icon-cameraphoto-wh.png) no-repeat 0 ;
+            padding-left: 40px;
+           
+        }
+        .navbar-dark .navbar-nav .nav-link{
+            color:#f4f4f4;
+            font-weight: bold;
+        }
+        .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover{
+            background-image: none, url(https://cdn.mainichi.jp/vol1/images/pc/gnav-sub-selected-ie.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        .news-box-inner a{
+            font-weight: 500;
+            color: black;
+        }
+        .news-box-inner .list-typeA {
+            margin-right: 7px;
+            
+        }
+        .inside-navi .list-typeA li{
+            border-bottom: 1px solid #dbdbdb;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .accounts dt{
+            font-size: 9pt;
+            font-weight: 500;
+
+        }
+        .templateroot .caption{
+            color: #00327A;
+        }
+        .after{
+            background-image: url(image/border\ image.png);
+            position: relative;
+            margin: 0 0 10px;
+            padding: 0 0 10px;
+        }
+        #main a:hover{
+            text-decoration: underline 1px !important;
+            color: #737373;
+        }
+       
+        .foot-end{
+            background-color: #ecebeb;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-sm-3 col-6">
+                <img src="image/logo-theMainichi.png" alt="theMainichi logo" width="230">
+                <div class="caption">Japan's National Daily Since 1992</div>
+            </div>
+            <div class="col-sm-9 col-6">
+                <div class="row">
+                    <div class="col-sm-4 col-6">
+                        <form action="/action_page.php">
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <button class="btn btn-secondary" type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact col-sm-8 col-6">
+                        <div class="contact float-end">
+                        <a href="" class="text-decoration-none text-primary mt-3 p-3">Contact Us</a>
+                        <a href="" class="text-decoration-none text-primary mt-3 pe-5">Japanese</a>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg p-0 navbar-dark bg-primary">
+                    <div class="container-fluid p-0">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Project Final First page.html">Top</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Latest</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Project Final Japan.html">Japan</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Project Final World.html">world</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Business</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Sports</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Science</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Entertainment</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Opinion</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Lifestyle</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Obituaries</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">features</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Photos</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Videos</a>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="main">
+        <div class="row">
+            <div class="col-sm-8">
+               <h2>World</h2>
+               <dl class="accounts border-bottom ">
+                <dt>The Mainchi on social media</dt>
+                <dd>
+                    <div class="inline-list fa-lg">
+                            <a href="http://www.facebook.com/themainichi" class="text-decoration-none" target="_blank" title="Facebook">
+                                <i style="color:gray" class="bi bi-facebook rounded-circle"></i>
+                                <span></span>
+                            </a>
+                            <a href="https://twitter.com/themainichi" class="text-decoration-none" target="_blank" title="twitter">
+                                <i style="color:gray" class="bi bi-twitter-x rounded-circle"></i>
+                                <span></span>
+                            </a>
+                       
+                            <a href="https://www.instagram.com/themainichi/" class="text-decoration-none" target="_blank" title="instagram">
+                                <i style="color:gray" class="bi bi-instagram"></i>
+                                <span></span>
+                            </a>
+                       
+                            <a href="/engdivsh/rss/" class="text-decoration-none fs-6 text-dark " title="RSS">RSS
+                                <i style="color:gray" class="bi bi-rss-fill"></i>
+                                <span></span>
+                            </a>
+                    </div>
+                </dd>
+            </dl>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="caption">
+                            <a href="" class="text-decoration-none  fs-2 text-dark fw-bold"></p>Biden to host Japan PM Kishida, Philippines President Marcos for White House summit
+                            </a>
+                        </p>
+                        
+                        <a href="The Mainichi - Japan Daily News_files/4(18).jpg">
+                            <img class="img-fluid" src="image/World.jpg"
+                                alt="The Kanagawa Prefectural Government building is seen in Yokohama's Naka Ward.">
+                        </a>
+                        <p class="text-muted">
+                            WASHINGTON (AP) -- President Joe Biden will host Japanese Prime Minister Fumio Kishida and Philippines President Ferdinand Marcos Jr. for a White House summit next month amid growing concerns about North Korea's nuclear program, provocative Chinese action in the South China Sea and differences over a Japanese company's plan to buy an iconic American steel company.
+
+White House press secretary Karine Jean-Pierre in a statement on Monday said the first-ever U.S.-Japan-Philippines leaders' summit is an opportunity to highlight the countries' "growing economic relations, a proud and resolute commitment to shared democratic values and a shared vision for a free and open Indo-Pacific."
+
+The three leaders have no shortage of issues to discuss.
+
+The announcement came as North Korea's state media reported that North Korean leader Kim Jong Un supervised a live-fire drill of nuclear-capable "super-large" multiple rocket launchers designed to target South Korea's capital. The North Korean claim followed the South Korean and Japanese militaries reporting on Monday that they had detected North Korea firing multiple short-range ballistic missiles toward waters off its eastern coast, adding to a streak of weapons displays that have raised regional tensions.
+
+The U.S.-Japan relationship is facing a rare moment of friction after Biden announced last week that he opposes the planned sale of Pittsburgh-based U.S. Steel to Nippon Steel of Japan. Biden argued in announcing his opposition that the U.S. needs to "maintain strong American steel companies powered by American steelworkers."
+
+Nippon Steel announced in December that it planned to buy U.S. Steel for $14.1 billion in cash, raising concerns about what the transaction could mean for unionized workers, supply chains and U.S. national security.
+
+Meanwhile, long-running Philippines-Chinese tensions have come back into focus this month after Chinese and Philippine coast guard vessels collided in the disputed South China Sea.
+
+The Chinese coast guard ships and accompanying vessels blocked the Philippine coast guard and supply vessels off the disputed Second Thomas Shoal and executed dangerous maneuvers that caused two minor collisions between the Chinese ships and two of the Philippine vessels, Philippine officials said.
+
+A small Philippine marine and navy contingent has kept watch onboard a rusting warship, the BRP Sierra Madre, which has been marooned since the late 1990s in the shallows of the Second Thomas Shoal.
+
+China also claims the shoal lying off the western Philippines and has surrounded the atoll with coast guard, navy and other ships to press its claims and prevent Filipino forces from delivering construction materials to fortify the Sierra Madre in a decades-long standoff.
+
+Close U.S.-Philippines relations were not a given when Marcos, the son and namesake of the former Philippines strongman, took office in 2022.
+
+But both Biden and Marcos have thrown much effort into strengthening the historically- complicated relationship between the two countries, with the two leaders sharing concerns about aggressive Chinese action around the region.
+
+A U.S. appeals court in 1996 upheld damages of about $2 billion against the elder Marcos' estate for the torture and killings of thousands of Filipinos. The court upheld a 1994 verdict of a jury in Hawaii, where he fled after being forced from power in 1986. He died there in 1989.
+
+The elder Marcos placed the Philippines under martial law in 1972, a year before his term was to expire. He padlocked the country's congressional and newspaper offices, ordered the arrest of many political opponents and activists and ruled by decree.
+
+The younger Marcos made an official visit to Washington last year, the first by a Philippine president in more than 10 years. The U.S. made the announcement of Marcos' coming trip to Washington as Secretary of State Antony Blinken visited Manilla.
+
+Jean-Pierre said that in addition to the leaders' summit Biden will hold one-on-one talks with Marcos. She said the leaders would discuss efforts to expand cooperation on economic security, clean energy, people-to-people ties, human rights and democracy.
+
+Biden is set to honor Kishida a day before the leaders summit with a state visit. The White House announced the state visit in January.
+                           
+                        </p>
+                    </div>
+                    <div class="after"></div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-sm-6 pt-3">
+                        <!--main-box begin-->
+                            <div class="main-box">
+                                <h2 class="fs-4">Top Stories</h2>
+                                <ul class="list-type list-inline pt-3">
+                                    <li>
+                                        <a href="####" class="text-decoration-none">
+                                            <div class="image2 float-end">
+                                                <img class="img-thumbnail" src="image/image2.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Space One rocket explodes after liftoff from Japan private launch pad
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image3 float-end">
+                                                <img class="img-thumbnail" src="image/image3.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Memorial balloons released in east Japan city hit by 2011 quake, tsunami
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image4 float-end">
+                                                <img class="img-thumbnail" src="image/image4.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                2 employees warned for using heated tobacco in nonsmoking central Japan gov't building
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image5 float-end">
+                                                <img class="img-thumbnail" src="image/image5.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Gender gap in Japanese workplace reinforced by traditional family values
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image6 float-end">
+                                                <img class="img-thumbnail" src="image/image6.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Forced head shave for transgender inmate a human rights violation: Osaka lawyers
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image7 float-end">
+                                                <img class="img-thumbnail" src="image/image7.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Hokkaido's Niseko to introduce lodging tax of up to 2,000 yen a night
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image8 float-end">
+                                                <img class="img-thumbnail" src="image/image8.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                2 now accused of murder in drowning of boy in Japan's Lake Hamana
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--main-box end-->
+                        <!--sub-box begin-->
+                        <div class="col-sm-6 pt-3">
+                            <div class="sub-box">
+                                <h2 class="fs-4">Editor's Picks</h2>
+                                <ul class="list-type list-inline pt-3">
+                                    <li>
+                                        <a href="####" class="text-decoration-none">
+                                            <div class="image9 float-end">
+                                                <img class="img-thumbnail" src="image/image9.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Yoroku: The shortcomings and the promise of the film 'Oppenheimer'
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image10 float-end">
+                                                <img class="img-thumbnail" src="image/image10.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Film poses moral questions about 2011 Fukushima disaster displacement
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image11 float-end">
+                                                <img class="img-thumbnail" src="image/image11.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Ghibli Park in central Japan to fully open on March 16 with 'Disneyland-level' fees
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image12 float-end">
+                                                <img class="img-thumbnail" src="image/image12.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Japanese animation studio founder Miyazaki isn't ready to retire just yet, after latest Oscar win
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""class="text-decoration-none">
+                                            <div class="image13 float-end">
+                                                <img class="img-thumbnail" src="image/image13.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Female drivers are injured 1.45 times more than men in accidents: Mainichi analysis
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""class="text-decoration-none">
+                                            <div class="image14 float-end">
+                                                <img class="img-thumbnail" src="image/image14.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Editorial: Hayao Miyazaki's 2nd Oscar spotlights Japan anime global boom 
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none">
+                                            <div class="image15 float-end">
+                                                <img class="img-thumbnail" src="image/image15.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                            <span class="caption fs-6 fw-bold">
+                                                Easy Japanese news in translation: Digging up clams at Chiba Prefecture beach
+                                            </span>
+                                            <p class="date">(2024/3/20)</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="after"></div>
+                            <!--sub-box end-->
+                        </div>
+                    </div>
+                </div>
+                <!--Visual Box Begin-->
+                <div class="row bg-dark">
+                    <div class="section">
+                        <section class="visual-box col-set ">
+                            <div class="col-12">
+                                <h2 class="movie">
+                                    <a class="text-decoration-none fs-5" href="/english/videos/">
+                                        Photos</a>
+                                </h2>
+                                <div class="box">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                            <img src="image/image carosel1.jpg" class="d-block w-100" alt="...">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div class="carousel-item">
+                                            <img src="image/carosel2.jpg" class="d-block w-100" alt="...">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div class="carousel-item">
+                                            <img src="image/carosel3.jpg" class="d-block w-100" alt="...">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div class="carousel-item">
+                                            <img src="image/carosel4.jpg" class="d-block w-100" alt="...">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="mt-4"></div>
+                <div class="after"></div>
+                <!--Visual Box end-->
+                <!--footer start-->
+                <!--news-box start-->
+                <div class="container news-box">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h3 >
+                                <a href="##" class="fs-5 text-dark">Japan</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                  
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image20.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <ul class="list-typeA list-inline lh-1">
+                                        <li>
+                                              <a class="fs-6" href="//mainichi.jp/english/articles/20240318/p2g/00m/0in/003000c">3 ballistic missiles fired by N. Korea, fall outside Japan's EEZ </a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240318/p2g/00m/0na/011000c">No plan to call election before scandal-hit figures punished: Kishida</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0na/001000c">Woman, baby daughter hit by train in Japan in apparent murder-suicide</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0na/046000c">Japan completes 4th round of Fukushima treated water discharge</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/045000c">Japan business lobby chief hopes for gov't efforts to end deflation</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240313/p2a/00m/0et/022000c">Retro Japan: Saga Prefectural Museum like a giant spaceship on outside, cave within</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>
+                                <a href="##" class="text-dark fs-5">World</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image21.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-8">
+                                        <ul class="list-typeA list-inline lh-1">
+                                            <li>
+                                            <a class="fs-6" href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/043000c">Putin basks in electoral victory that was never in doubt even as Russians quietly protest</a>
+                                            </li>
+                                            <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/041000c">Biden says at DC roast that of 2 presidential candidates, 1 was mentally unfit. 'The other's me'</a> 
+                                            </li>
+                                            <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/039000c">How should Israel bring to justice perpetrators behind worst attack in its history?</a>
+                                            </li>
+                                            <li>
+                                                <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/037000c">India's Bengaluru fast running out of water, and long, scorching summer still looms</a>
+                                            </li>
+                                            <li>
+                                                <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/035000c">Volcano in Iceland erupting for 4th time in 3 months, sending plumes of lava skywards</a>
+                                            </li>
+                                            <li>
+                                                <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/033000c">Brazil's Bolsonaro 'not afraid of any trial' over accusations he plotted to remain president</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>
+                                <a class="text-dark fs-5" href="##" class="fs-5">Business</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image22.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <ul class="list-typeA list-inline lh-1">
+                                        <li>
+                                        <a class="fs-6" href="//mainichi.jp/english/articles/20240318/p2g/00m/0bu/009000c">Nikkei stock index up 2% on weak yen</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240318/p2g/00m/0bu/005000c">BOJ to debate end of negative rate policy after bumper wage hikes</a>
+                                        </li>
+                                        <li>
+                                        <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/045000c">Japan business lobby chief hopes for gov't efforts to end deflation</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/021000c">
+                                                TikTok creators warn of economic impact if app banned in US, call it vital space for the marginalized
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240313/p2a/00m/0bu/024000c">75% unaware of gov't measures on 140-year job to replace Japan's aging water pipes: poll</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240315/p2a/00m/0bu/017000c">Record number of fitness clubs in Japan go bust despite market growth </a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--news-box end-->
+                <div class="container news-box">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h3 >
+                                <a class="text-dark fs-5" href="##" class="fs-5">Sports</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image23.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8"> 
+                                    <ul class="list-typeA list-inline lh-1">
+                                        <li>
+                                            <a class="fs-6" href="//mainichi.jp/english/articles/20240318/p2g/00m/0in/003000c">3 ballistic missiles fired by N. Korea, fall outside Japan's EEZ </a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240318/p2g/00m/0na/011000c">No plan to call election before scandal-hit figures punished: Kishida</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0na/001000c">Woman, baby daughter hit by train in Japan in apparent murder-suicide</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0na/046000c">Japan completes 4th round of Fukushima treated water discharge</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/045000c">Japan business lobby chief hopes for gov't efforts to end deflation</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240313/p2a/00m/0et/022000c">Retro Japan: Saga Prefectural Museum like a giant spaceship on outside, cave within</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>
+                                <a class="text-dark fs-5" href="##" class="fs-5">Arts & Entertainment</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image24.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div> 
+                                </div>
+                                <div class="col-sm-8">
+                                    <ul class="list-typeA list-inline lh-1">
+                                        <li>
+                                       <a class="fs-6" href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/043000c">Putin basks in electoral victory that was never in doubt even as Russians quietly protest</a>
+                                        </li>
+                                        <li>
+                                        <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/041000c">Biden says at DC roast that of 2 presidential candidates, 1 was mentally unfit. 'The other's me'</a> 
+                                        </li>
+                                        <li>
+                                        <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/039000c">How should Israel bring to justice perpetrators behind worst attack in its history?</a>
+                                        </li>
+                                        <li>
+                                        <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/037000c">India's Bengaluru fast running out of water, and long, scorching summer still looms</a>
+                                        </li>
+                                        <li>
+                                           <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/035000c">Volcano in Iceland erupting for 4th time in 3 months, sending plumes of lava skywards</a>
+                                        </li>
+                                        <li>
+                                           <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0in/033000c">Brazil's Bolsonaro 'not afraid of any trial' over accusations he plotted to remain president</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>
+                                <a class="text-dark fs-5" href="##" class="fs-5">Lifestyle & Health</a><img src="image/icon-arrow_gr(2).png" alt="">
+                            </h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="photo-box">
+                                        <a href="">
+                                            <div class="thumb img">
+                                                <img src="image/image25.jpg" alt="">
+                                                <div class="img-mask"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <ul class="list-typeA list-inline lh-1">
+                                        <li>
+                                        <a class="fs-6" href="//mainichi.jp/english/articles/20240318/p2g/00m/0bu/009000c">Nikkei stock index up 2% on weak yen</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240318/p2g/00m/0bu/005000c">BOJ to debate end of negative rate policy after bumper wage hikes</a>
+                                        </li>
+                                        <li>
+                                        <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/045000c">Japan business lobby chief hopes for gov't efforts to end deflation</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240317/p2g/00m/0bu/021000c">
+                                                TikTok creators warn of economic impact if app banned in US, call it vital space for the marginalized
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240313/p2a/00m/0bu/024000c">75% unaware of gov't measures on 140-year job to replace Japan's aging water pipes: poll</a>
+                                        </li>
+                                        <li>
+                                            <a href="//mainichi.jp/english/articles/20240315/p2a/00m/0bu/017000c">Record number of fitness clubs in Japan go bust despite market growth </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--footer end-->
+            </div>
+            <div class="col-sm-4">
+                <section class="inside-navi">
+                    <h2 class="fs-5 pt-3">Also Inside</h2>
+                    <ul class="list-typeA list-inline pt-3">
+                        <li>
+                            <a href="//mainichi.jp/english/haiku/" class="text-decoration-none text-dark">Haiku in English</a>
+                        </li>
+                        <li>
+                            <a href="//mainichi.jp/english/hibakusha/" class="text-decoration-none text-dark">A-bomb Survivors</a>
+                        </li>
+                        <li>
+                            <a href="//mainichi.jp/english/mainichi-wartime-photographs/" class="text-decoration-none text-dark">Mainichi Wartime
+                                Photographs</a>
+                        </li>
+                    </ul>
+                </section>
+                <dl class="accounts">
+                    <dt>The Mainchi on social media</dt>
+                    <dd>
+                        <div class="inline-list float-end fa-lg">
+                                <a href="http://www.facebook.com/themainichi" class="text-decoration-none" target="_blank" title="Facebook">
+                                    <i style="color:gray" class="bi bi-facebook rounded-circle"></i>
+                                    <span></span>
+                                </a>
+                                <a href="https://twitter.com/themainichi" class="text-decoration-none" target="_blank" title="twitter">
+                                    <i style="color:gray" class="bi bi-twitter-x rounded-circle"></i>
+                                    <span></span>
+                                </a>
+                           
+                                <a href="https://www.instagram.com/themainichi/" class="text-decoration-none" target="_blank" title="instagram">
+                                    <i style="color:gray" class="bi bi-instagram"></i>
+                                    <span></span>
+                                </a>
+                           
+                                <a href="/engdivsh/rss/" class="text-decoration-none fs-6 text-dark " title="RSS">RSS
+                                    <i style="color:gray" class="bi bi-rss-fill"></i>
+                                    <span></span>
+                                </a>
+                        </div>
+                    </dd>
+                </dl>
+                <!--banner start-->
+                <div class="banner float-end  pt-2">
+                    <a href="https://mainichi.jp/english/articles/20220922/hre/00m/0fp/001000d" class="banner-sp" target="_blank">
+                        <img src="image/bnr_special_text_en.svg" alt="">
+                        <div class="banner-sp-text"></div>
+                    </a>
+                </div>
+                <div class="banner2 pt-2">
+                    <a href="/english/covid19/" class="widget-covid19-link">
+                        <section class="widget-covid19">
+                            <div class="widget-covid19-head">
+                                <h2 class="widget-covid19-title fs-5 fw-bold">Coronavirus
+                                <span class="widget-covid19-title-cap">(COVID-19)</span>
+                                <span class="widget-covid19-title-2 fw-bold">infections in Japan</span>
+                                </h2>
+                                <span class="widget-covid19-date">As of March 15, 2024, 2:00 p.m.</span>
+                            </div>
+                            <div class="widget-covid19-subtitle">As of the March 4 - March 10, 2024 period</div>
+                            <div class="container widget-covid19-row col-12">
+                                <div class="row">
+                                <div class="widget-covid19-box col-6 pt-0">
+                                    <span class="widget-covid19-box-label float-start">No. of patients per medical facility (nationwide)</span>
+                                    <span class="widget-covid19-box-number ">6.53</span>
+                                </div>
+                                <div class="widget-covid19-box col-6 float-end pt-0 ">
+                                <span class="widget-covid19-box-label2">Change from prev. week</span>
+                                <span class="widget-covid19-box-number"><span></span>-0</span>  
+                                </div>
+                                </div>
+                            </div>
+                            <div class="widget-button pt-0" href="/covid19/">
+                                <span>More information</span>
+                                <span class="widget-covid19-button-arrow"></span>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+                <!--banner end-->
+                <!--Latest Articles Start-->
+             <div class="latest-articles pt-3">
+                <h2 class="fs-4 pt-3">Latest Articles</h2>
+                <ul class="list-typeD list-inline">
+                    <li class="pt-3">
+                        <a href="####" class="text-decoration-none">
+                            <div class="image9 float-end">
+                                <img src="image/image16.jpg" alt="">
+                                <div class="img-mask"></div>
+                            </div>
+                            <span class="caption fs-6 fw-bold">
+                                Toyota, others offer large pay hikes amid hope of beating deflation
+                            </span>
+                            <p class="date">(2024/3/20)</p>
+                        </a>
+                    </li>
+                    <li class="pt-3">
+                        <a href="" class="text-decoration-none">
+                            <div class="image8 float-end">
+                                <img src="image/image3.jpg" alt="">
+                                <div class="img-mask"></div>
+                            </div>
+                            <span class="caption fs-6 fw-bold">
+                                Memorial balloons released in east Japan city hit by 2011 quake, tsunami
+                            </span>
+                            <p class="date">(2024/3/20)</p>
+                        </a>
+                    </li>
+                    <li class="pt-3">
+                        <a href="" class="text-decoration-none">
+                            <div class="image8 float-end">
+                                <img src="image/image1.jpg" alt="">
+                                <div class="img-mask"></div>
+                            </div>
+                            <span class="caption fs-6 fw-bold">
+                                10% of families with 2nd-yr middle school kids in Japan's Kanagawa Pref. in poverty: poll
+                            </span>
+                            <p class="date">(2024/3/20)</p>
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <a href="##" class="text-decoration-none text-dark float-end"> More Articles</a>
+                </div>
+                <div class="section">
+                    <h2 class="fs-3 pt-5">Trending</h2>
+                    <div class="templateroot">
+                        <ul class="list-typeC list-inline ">
+                            <li class="pt-3 bg-light border border-light border-3">
+                               <a href="" target="_parent" id="" class="text-decoration-none">
+                                <div class="thumb img float-end">
+                                    <img alt class="horizontal-photo" src="image/image17.jpg" >
+                                    <div class="img-mask"></div>
+                                </div>
+                                <span class="caption fw-bold fs-6">Ghibli Park in central Japan to fully open on March 16 with 'Disneyland-level' fees</span>
+                               </a>
+                            </li>
+                            <li class="pt-3 bg-light border border-light border-3">
+                               <a href="" target="_parent" id="" class="text-decoration-none">
+                                <div class="thumb img float-end">
+                                    <img alt class="horizontal-photo" src="image/image8.jpg">
+                                    <div class="img-mask"></div>
+                                </div>
+                                <span class="caption fw-bold fs-6">2 now accused of murder in drowning of boy in Japan's Lake Hamana</span>
+                               </a>
+                            </li>
+                            <li class="pt-3 bg-light border border-light border-3">
+                               <a href="" target="_parent" id="" class="text-decoration-none">
+                                <div class="thumb img float-end">
+                                    <img alt class="horizontal-photo" src="image/image19.jpg">
+                                    <div class="img-mask"></div>
+                                </div>
+                                <span class="caption fw-bold fs-6">High court commutes death sentence for Japan yakuza boss to life</span>
+                               </a>
+                            </li>
+                        </ul>
+                        <div class="txt-right providing float-end">powered by
+                            <img src="image/piano.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Latest Articles end-->
+            </div>
+            <div class="popuppanel-left" id="pi-pc-all-popupleft"></div>
+            <!--contents-end start-->
+            <div class="contents-end">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 border-top">
+                            <ul class="list-inline">
+                                <li>
+                                    <a class="text-decoration-none text-dark float-end border  fst-normal fs-6 p-2" href="#top">Go
+                                        to Page Top</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="after"></div>
+                <div class="container foot-end">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">Japan</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Crime & Accidents</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Politics</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Social Issues</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Weather & Disasters</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">History & Festivals</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Education</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Imperial Family</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Polls</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">World</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Asia & Oceania</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">USA & Canada</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Europe</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Middle East</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Latin America
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Africa</a>
+                                                        </li>
+            
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">Sports</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Baseball</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Soccer</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Sumo</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Tennis</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Golf
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Rugby</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Athletics</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Winter Sports</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Olympics & Paralympics</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">Science</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Technology</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Medical</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Environment</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Space</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-3">Entertainment</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Anime & Manga
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Showbiz</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Culture</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Amusement</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+            
+            
+            
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">Opinion</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Editorial</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">News Navigator</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Perspectives</a>
+                                                        </li>
+                                                        </ul>
+                                                        </dd>
+                                                        <dt>
+                                                            <a href="" class="text-decoration-none text-dark fs-6 border-bottom pt-3">Lifestyle</a>
+                                                        </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                       
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Animals</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Travel
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Health</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Food</a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">Fashion</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <a href=""
+                                                        class="text-decoration-none text-dark fs-6 border-bottom pt-1">Features</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark"
+                                                                href="">A-bomb Survivors</a>
+                                                        </li>
+                                                <dt class="pt-3">
+                                                    <a href="" class="text-decoration-none text-dark fs-6 border-bottom">Obituaries</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+
+                                                    </ul>
+                                                </dd>
+                                                <dt class="pt-3">
+                                                    <a href="" class="text-decoration-none text-dark fs-6 border-bottom">Photos</a>
+                                                </dt>
+                                                <dd>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark" href="">Photo Journal
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="font-size: 10pt;" class="text-decoration-none text-dark" href="">Photo Specials</a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <dl class="accounts">
+                                <dt class="fs-6 border-bottom">The Mainchi on social media</dt>
+                                <dd>
+                                    <div class="inline-list float-end fa-lg pt-3">
+                                        <a href="http://www.facebook.com/themainichi" class="text-decoration-none" target="_blank" title="Facebook">
+                                            <i style="color:gray" class="bi bi-facebook rounded-circle"></i>
+                                            <span></span>
+                                        </a>
+                                        <a href="https://twitter.com/themainichi" class="text-decoration-none" target="_blank" title="twitter">
+                                            <i style="color:gray" class="bi bi-twitter-x rounded-circle"></i>
+                                            <span></span>
+                                        </a>
+                            
+                                        <a href="https://www.instagram.com/themainichi/" class="text-decoration-none" target="_blank"
+                                            title="instagram">
+                                            <i style="color:gray" class="bi bi-instagram"></i>
+                                            <span></span>
+                                        </a>
+                            
+                                        <a href="/engdivsh/rss/" class="text-decoration-none fs-6 text-dark " title="RSS">RSS
+                                            <i style="color:gray" class="bi bi-rss-fill"></i>
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script src="assets/bootstrap-5/js/bootstrap.min.js"></script>
+
+</html>
